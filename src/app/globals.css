@@ -1,0 +1,285 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ===========================================================================
+   RoadFolio — DARK GLASS theme. Ported from the Stitch "Dark Glass" screens.
+   Space Grotesk + deep green-black palette + frosted glass panels.
+   See docs/stitch-designs/dark-glass/.
+   =========================================================================== */
+@theme {
+  /* --- MD3 dark palette --- */
+  --color-primary: #4edea3; /* bright emerald — emphasis / links / active text */
+  --color-on-primary: #003824;
+  --color-primary-container: #10b981; /* emerald — button backgrounds */
+  --color-on-primary-container: #00422b;
+  --color-primary-fixed: #6ffbbe;
+  --color-primary-fixed-dim: #4edea3;
+  --color-inverse-primary: #006c49;
+
+  --color-secondary: #45dfa4;
+  --color-on-secondary: #003825;
+  --color-secondary-container: #00bd85;
+  --color-on-secondary-container: #00452e;
+
+  --color-tertiary: #f9bd22; /* amber/gold — "in progress" / active */
+  --color-on-tertiary: #402d00;
+  --color-tertiary-container: #ce9a00;
+  --color-on-tertiary-container: #4a3500;
+  --color-tertiary-fixed: #ffdf9f;
+
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  --color-background: #0a1611;
+  --color-on-background: #d8e6dd;
+  --color-surface: #0a1611;
+  --color-on-surface: #d8e6dd;
+  --color-on-surface-variant: #bbcabf;
+  --color-surface-variant: #2c3731;
+  --color-surface-dim: #0a1611;
+  --color-surface-bright: #303c36;
+  --color-surface-container-lowest: #06100c;
+  --color-surface-container-low: #131e19;
+  --color-surface-container: #17221d;
+  --color-surface-container-high: #212c27;
+  --color-surface-container-highest: #2c3731;
+  --color-surface-tint: #4edea3;
+  --color-inverse-surface: #d8e6dd;
+  --color-inverse-on-surface: #27332d;
+
+  --color-outline: #86948a;
+  --color-outline-variant: #3c4a42;
+
+  /* --- spacing scale (named tokens used across components) ---
+     NOTE: keys xs/sm/md/lg/xl collide with Tailwind size keywords, so
+     `max-w-sm` etc. resolve to these. Use arbitrary values for max-width. */
+  --spacing-xs: 4px;
+  --spacing-base: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-gutter: 24px;
+  --spacing-xl: 40px;
+  --spacing-container-max: 1280px;
+
+  /* --- radius --- */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  /* --- font families: Space Grotesk everywhere --- */
+  --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-headline-lg: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-headline-md: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-headline-lg-mobile: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-label-caps: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-body-lg: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-body-md: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-metadata: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+
+  /* --- font sizes --- */
+  --text-display: 48px;
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 700;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 700;
+
+  --text-headline-lg-mobile: 24px;
+  --text-headline-lg-mobile--line-height: 1.2;
+  --text-headline-lg-mobile--font-weight: 700;
+
+  --text-headline-md: 20px;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.5;
+  --text-body-md--font-weight: 400;
+
+  --text-metadata: 13px;
+  --text-metadata--line-height: 1.4;
+  --text-metadata--font-weight: 500;
+
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 1;
+  --text-label-caps--letter-spacing: 0.05em;
+  --text-label-caps--font-weight: 600;
+}
+
+/* shadcn primitives mapped to the dark palette */
+@theme inline {
+  --color-card: var(--color-surface-container-low);
+  --color-card-foreground: var(--color-on-surface);
+  --color-popover: var(--color-surface-container);
+  --color-popover-foreground: var(--color-on-surface);
+  --color-muted: var(--color-surface-container);
+  --color-muted-foreground: var(--color-on-surface-variant);
+  --color-accent: var(--color-surface-container-high);
+  --color-accent-foreground: var(--color-on-surface);
+  --color-border: var(--color-outline-variant);
+  --color-input: var(--color-outline-variant);
+  --color-ring: var(--color-primary);
+  --color-foreground: var(--color-on-surface);
+  --color-primary-foreground: var(--color-on-primary);
+  --color-secondary-foreground: var(--color-on-surface);
+  --color-destructive: var(--color-error);
+  --color-destructive-foreground: var(--color-on-error);
+  --radius-sm: calc(var(--radius-lg) - 2px);
+  --radius-md: calc(var(--radius-lg) - 1px);
+  --font-sans: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #0a1611;
+  --foreground: #d8e6dd;
+  --card: #131e19;
+  --card-foreground: #d8e6dd;
+  --popover: #17221d;
+  --popover-foreground: #d8e6dd;
+  --secondary: #17221d;
+  --secondary-foreground: #d8e6dd;
+  --muted: #17221d;
+  --muted-foreground: #bbcabf;
+  --accent: #212c27;
+  --accent-foreground: #d8e6dd;
+  --destructive: #ffb4ab;
+  --border: #3c4a42;
+  --input: #3c4a42;
+  --ring: #4edea3;
+}
+
+/* ---------------------------------------------------------------------------
+   Glassmorphism utilities
+   --------------------------------------------------------------------------- */
+@utility glass-panel {
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+@utility glass-elevated {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(28px) saturate(170%);
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    0 0 40px rgba(16, 185, 129, 0.18),
+    0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+@utility glass-inset {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+@utility emerald-glow {
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.1);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 10px rgba(78, 222, 163, 0.3);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply text-on-surface;
+    font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+    /* Vivid multi-hue glow background — gives the glass something to frost over */
+    background-color: #06100c;
+    background-image:
+      radial-gradient(55rem 55rem at 10% 5%, rgba(16, 185, 129, 0.28) 0%, transparent 55%),
+      radial-gradient(50rem 50rem at 92% 12%, rgba(20, 184, 166, 0.22) 0%, transparent 55%),
+      radial-gradient(55rem 55rem at 82% 95%, rgba(52, 211, 153, 0.2) 0%, transparent 55%),
+      radial-gradient(45rem 45rem at 18% 88%, rgba(16, 185, 129, 0.16) 0%, transparent 55%);
+    background-attachment: fixed;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+  .material-symbols-outlined.fill {
+    font-variation-settings: "FILL" 1;
+  }
+}
+
+/* Reduced-transparency fallback: solid panels, no blur. */
+@media (prefers-reduced-transparency: reduce) {
+  .glass-panel,
+  .glass-elevated {
+    background-color: #131e19;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Hide scrollbars on horizontal scrollers. */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prose styling for rendered roadmap markdown (dark). */
+.prose-roadfolio :where(p) {
+  @apply my-2;
+}
+.prose-roadfolio :where(ul) {
+  @apply my-2 list-disc space-y-1 pl-5;
+}
+.prose-roadfolio :where(ol) {
+  @apply my-2 list-decimal space-y-1 pl-5;
+}
+.prose-roadfolio :where(a) {
+  @apply font-medium text-primary underline underline-offset-2;
+}
+.prose-roadfolio :where(strong) {
+  @apply font-semibold text-on-surface;
+}
+.prose-roadfolio :where(code) {
+  @apply rounded bg-white/5 px-1.5 py-0.5 font-mono text-[0.8em] text-primary;
+}
+.prose-roadfolio :where(blockquote) {
+  @apply border-l-2 border-outline-variant pl-4 text-on-surface-variant;
+}
+.prose-roadfolio :where(h1, h2, h3, h4) {
+  @apply mt-4 mb-2 font-semibold;
+}
+.prose-roadfolio :where(table) {
+  @apply my-3 w-full border-collapse text-left text-xs;
+}
+.prose-roadfolio :where(th, td) {
+  @apply border border-outline-variant px-2 py-1.5 align-top;
+}
+.prose-roadfolio :where(th) {
+  @apply bg-white/5 font-semibold;
+}

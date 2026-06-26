@@ -1,0 +1,148 @@
+// RoadFolio Prisma schema
+// Supabase Postgres as the database; NextAuth (Auth.js) for auth.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ---------------------------------------------------------------------------
+// NextAuth / Auth.js models (Prisma adapter)
+// ---------------------------------------------------------------------------
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  passwordHash  String? // for Credentials (email + password) login
+
+  accounts Account[]
+  sessions Session[]
+  roadmaps Roadmap[]
+  progress NodeProgress[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ---------------------------------------------------------------------------
+// App models
+// ---------------------------------------------------------------------------
+
+enum NodeType {
+  milestone
+  task
+  project
+  reference
+}
+
+enum Difficulty {
+  easy
+  medium
+  hard
+}
+
+enum ProgressStatus {
+  not_started
+  in_progress
+  done
+  skipped
+}
+
+model Roadmap {
+  id             String   @id @default(cuid())
+  userId         String
+  slug           String
+  title          String
+  description    String?
+  tags           String[]
+  version        Int      @default(1)
+  estimatedDuration String?
+  sourceMarkdown String   @db.Text
+  intro          String?  @db.Text // rendered intro content (before first section)
+
+  user  User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nodes RoadmapNode[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, slug])
+}
+
+model RoadmapNode {
+  id         String      @id @default(cuid())
+  roadmapId  String
+  nodeKey    String // stable {id} from the markdown; unique per roadmap
+  parentKey  String? // milestone/section this node belongs to
+  level      Int // heading depth (2 = section, 3 = node)
+  type       NodeType
+  title      String
+  content    String?     @db.Text
+  difficulty Difficulty?
+  estimate   String?
+  optional   Boolean     @default(false)
+  orderIndex Int
+
+  roadmap  Roadmap        @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  progress NodeProgress[]
+
+  @@unique([roadmapId, nodeKey])
+  @@index([roadmapId])
+}
+
+model NodeProgress {
+  id            String         @id @default(cuid())
+  userId        String
+  roadmapNodeId String
+  status        ProgressStatus @default(not_started)
+  updatedAt     DateTime       @updatedAt
+
+  user User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  node RoadmapNode @relation(fields: [roadmapNodeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, roadmapNodeId])
+  @@index([userId])
+}

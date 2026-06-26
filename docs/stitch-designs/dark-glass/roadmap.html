@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Engineer Roadmap 2026 - RoadFolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#261a00",
+                      "on-secondary-container": "#00452e",
+                      "surface-container-low": "#131e19",
+                      "on-surface": "#d8e6dd",
+                      "on-tertiary-container": "#4a3500",
+                      "tertiary-fixed-dim": "#f9bd22",
+                      "surface-container-highest": "#2c3731",
+                      "inverse-surface": "#d8e6dd",
+                      "error-container": "#93000a",
+                      "surface-tint": "#4edea3",
+                      "secondary-container": "#00bd85",
+                      "on-primary-container": "#00422b",
+                      "on-secondary-fixed-variant": "#005137",
+                      "tertiary": "#f9bd22",
+                      "primary-container": "#10b981",
+                      "on-tertiary": "#402d00",
+                      "primary-fixed": "#6ffbbe",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "secondary": "#45dfa4",
+                      "on-secondary-fixed": "#002114",
+                      "on-primary": "#003824",
+                      "tertiary-container": "#ce9a00",
+                      "inverse-primary": "#006c49",
+                      "outline-variant": "#3c4a42",
+                      "tertiary-fixed": "#ffdf9f",
+                      "on-surface-variant": "#bbcabf",
+                      "on-primary-fixed-variant": "#005236",
+                      "surface-container-lowest": "#06100c",
+                      "surface-variant": "#2c3731",
+                      "on-primary-fixed": "#002113",
+                      "surface-container-high": "#212c27",
+                      "on-tertiary-fixed-variant": "#5c4300",
+                      "on-background": "#d8e6dd",
+                      "background": "#0a1611",
+                      "primary-fixed-dim": "#4edea3",
+                      "on-error": "#690005",
+                      "surface-bright": "#303c36",
+                      "surface": "#0a1611",
+                      "on-secondary": "#003825",
+                      "surface-dim": "#0a1611",
+                      "secondary-fixed-dim": "#45dfa4",
+                      "surface-container": "#17221d",
+                      "secondary-fixed": "#68fcbf",
+                      "primary": "#4edea3",
+                      "outline": "#86948a",
+                      "inverse-on-surface": "#27332d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "40px",
+                      "container-max": "1440px",
+                      "panel-padding": "24px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Space Grotesk"
+                      ],
+                      "body-base": [
+                              "Space Grotesk"
+                      ],
+                      "display-lg-mobile": [
+                              "Space Grotesk"
+                      ],
+                      "label-sm": [
+                              "Space Grotesk"
+                      ],
+                      "display-lg": [
+                              "Space Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-base": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+        }
+        .emerald-glow {
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.15);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+        }
+        .glass-input {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            border-bottom-color: #10b981;
+            background-color: rgba(16, 185, 129, 0.05);
+            outline: none;
+            box-shadow: 0 4px 15px -3px rgba(16, 185, 129, 0.2);
+        }
+        
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 2rem;
+            bottom: -2rem;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(16, 185, 129, 0.4), rgba(255, 255, 255, 0.1));
+            z-index: 0;
+        }
+        .timeline-node {
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base min-h-screen relative overflow-x-hidden selection:bg-primary/30 selection:text-primary-fixed">
+<!-- Ambient Background Glows -->
+<div class="fixed inset-0 pointer-events-none z-[-1]">
+<div class="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full bg-primary/5 blur-[150px]"></div>
+<div class="absolute bottom-[-20%] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-primary/5 blur-[200px]"></div>
+</div>
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col p-panel-padding gap-8 bg-surface-container-low/60 backdrop-blur-3xl border-r border-white/12 shadow-[0_0_40px_rgba(16,185,129,0.1)] fixed left-0 top-0 h-full w-64 z-40">
+<!-- Header/Logo -->
+<div class="flex flex-col gap-1 mb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[32px]" style="font-variation-settings: 'FILL' 1;">explore</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">RoadFolio</h1>
+</div>
+<p class="text-on-surface-variant font-label-sm uppercase tracking-widest pl-11">Learning Explorer</p>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface transition-all duration-300 rounded-xl" href="#">
+<span class="material-symbols-outlined font-light">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-primary-container/20 text-primary rounded-xl px-4 py-3 border border-primary/20 transition-all duration-300" href="#">
+<span class="material-symbols-outlined font-light" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-medium">My Roadmaps</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface transition-all duration-300 rounded-xl" href="#">
+<span class="material-symbols-outlined font-light">person</span>
+<span>Profile</span>
+</a>
+</div>
+<!-- CTA Bottom -->
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-3 px-4 rounded-xl font-medium hover:bg-primary-fixed transition-colors active:scale-[0.98] shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                    Import roadmap
+                </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:ml-64 relative w-full h-full overflow-y-auto overflow-x-hidden">
+<!-- TopNavBar (Slimmed down for inner page context) -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] z-30 flex justify-end items-center px-panel-padding h-16 bg-background/80 backdrop-blur-xl border-b border-white/12">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container/30 border border-primary/40 flex items-center justify-center text-primary font-bold cursor-pointer hover:bg-primary-container/50 transition-colors">
+                        T
+                    </div>
+</div>
+</header>
+<!-- Scrollable Canvas -->
+<div class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-[1000px] mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-8">
+<a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors mb-6 text-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        All roadmaps
+                    </a>
+<div class="flex items-center gap-3 mb-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-variant border border-white/10 font-label-sm text-on-surface-variant uppercase tracking-wider text-[10px]">AI</span>
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-container/10 border border-tertiary/20 text-tertiary font-label-sm tracking-wider uppercase text-[10px]">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                            IN PROGRESS
+                        </span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-on-surface tracking-tight mb-4 text-glow">
+                        AI Engineer Roadmap 2026
+                    </h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                        Path from full-stack Next.js developer to shipping production AI-powered products.
+                    </p>
+</div>
+<!-- Progress Tracker Stats -->
+<div class="glass-panel p-6 mb-8 emerald-glow">
+<div class="flex flex-col md:flex-row justify-between md:items-end gap-4 mb-4">
+<div>
+<div class="text-3xl font-bold text-on-surface mb-1">32% <span class="text-lg text-on-surface-variant font-normal">Completed</span></div>
+<div class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+                                10 / 30 Tasks
+                            </div>
+</div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+                            4-6 months part-time
+                        </div>
+</div>
+<!-- Progress Bar -->
+<div class="h-2 w-full bg-black/40 rounded-full overflow-hidden border border-white/5 relative">
+<div class="absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-1000 ease-out shadow-[0_0_10px_rgba(16,185,129,0.8)]" style="width: 32%;"></div>
+</div>
+</div>
+<!-- Callout / Intro Text -->
+<div class="glass-panel p-6 mb-12 bg-primary-container/5 border-l-4 border-l-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-6xl">tips_and_updates</span>
+</div>
+<div class="relative z-10 text-on-surface-variant leading-relaxed">
+<p class="mb-3"><strong class="text-on-surface font-medium">Your starting point:</strong> Full-stack web developer at an agency. Strong in Next.js, some WordPress. <strong class="text-on-surface font-medium">Your target:</strong> AI Engineer. <strong class="text-on-surface font-medium">Your unfair advantage:</strong> You already ship production web apps. Most people learning AI can't. The fastest path to an "AI Engineer" job in 2026 is <em class="text-primary italic">not</em> becoming a data scientist — it's becoming the person who builds <strong class="text-primary font-medium">real, shipped, AI-powered products.</strong></p>
+<p>Build first, deepen the theory as needed. Do <strong class="text-on-surface">not</strong> spend 6 months on linear algebra and Andrew Ng's ML course before touching an LLM API — that's the classic trap that kills momentum.</p>
+</div>
+</div>
+<!-- Timeline / Modules -->
+<div class="relative timeline-line">
+<!-- Module 0 (Completed) -->
+<div class="relative pl-16 mb-10 group">
+<!-- Node Marker -->
+<div class="timeline-node absolute left-[19px] top-6 w-7 h-7 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="glass-panel p-0 overflow-hidden opacity-80 transition-opacity hover:opacity-100">
+<!-- Header -->
+<div class="p-6 border-b border-white/10 bg-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer">
+<div>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface line-through decoration-primary/50 decoration-2">0. Get the role definition right</h3>
+<p class="text-sm text-on-surface-variant mt-1">Understanding the landscape and setting expectations.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-sm text-primary font-medium bg-primary/10 px-3 py-1 rounded-full border border-primary/20">100%</div>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 1 (Active) -->
+<div class="relative pl-16 mb-10 group">
+<!-- Node Marker -->
+<div class="timeline-node absolute left-[19px] top-6 w-7 h-7 rounded-full bg-tertiary/20 border-2 border-tertiary flex items-center justify-center shadow-[0_0_20px_rgba(249,189,34,0.3)]">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></div>
+</div>
+<div class="glass-panel p-0 overflow-hidden border-tertiary/30 shadow-[0_4px_30px_rgba(0,0,0,0.5)] z-20 relative">
+<!-- Active Accent Glow -->
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent pointer-events-none"></div>
+<!-- Header -->
+<div class="p-6 border-b border-white/10 bg-white/[0.03] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h3 class="font-headline-md text-2xl font-semibold text-on-surface">1. Prompt Engineering Mastery</h3>
+</div>
+<p class="text-sm text-on-surface-variant">The absolute foundation. Before writing code, master how to talk to the models.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end">
+<div class="text-sm text-tertiary font-medium mb-1">3/5 Tasks</div>
+<div class="w-24 h-1.5 bg-black/40 rounded-full overflow-hidden border border-white/5">
+<div class="h-full bg-tertiary rounded-full shadow-[0_0_8px_rgba(249,189,34,0.6)]" style="width: 60%;"></div>
+</div>
+</div>
+<button class="text-on-surface hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined transition-transform duration-300 rotate-180">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Task List -->
+<div class="p-2 flex flex-col gap-1">
+<!-- Task Done -->
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group/task">
+<button class="mt-0.5 text-primary hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3">
+<span class="text-on-surface-variant line-through decoration-primary/50 text-base">Understand few-shot vs zero-shot prompting</span>
+<span class="px-2 py-0.5 rounded text-[10px] uppercase tracking-wider bg-white/5 text-on-surface-variant border border-white/10">Easy</span>
+</div>
+</div>
+</div>
+<!-- Task Done -->
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group/task">
+<button class="mt-0.5 text-primary hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3">
+<span class="text-on-surface-variant line-through decoration-primary/50 text-base">Chain of Thought (CoT) &amp; System Prompts</span>
+<span class="px-2 py-0.5 rounded text-[10px] uppercase tracking-wider bg-white/5 text-on-surface-variant border border-white/10">Medium</span>
+</div>
+</div>
+</div>
+<!-- Task Active -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-tertiary/5 border border-tertiary/10 transition-colors group/task relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary"></div>
+<button class="mt-0.5 text-tertiary hover:text-tertiary-fixed transition-colors cursor-pointer" title="Mark Done">
+<span class="material-symbols-outlined text-[24px]">radio_button_partial</span>
+</button>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-1.5">
+<span class="text-on-surface font-medium text-base">Structured Output (JSON mode, function calling intro)</span>
+<span class="px-2 py-0.5 rounded text-[10px] uppercase tracking-wider bg-error/10 text-error border border-error/20">Hard</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-3">Crucial for integrating AI into code. Practice getting reliable JSON back from OpenAI/Anthropic APIs.</p>
+<div class="flex gap-2 opacity-0 group-hover/task:opacity-100 transition-opacity">
+<button class="text-xs font-medium px-3 py-1.5 bg-tertiary text-on-tertiary rounded-md hover:bg-tertiary-fixed transition-colors">Resume Task</button>
+<button class="text-xs font-medium px-3 py-1.5 bg-transparent border border-white/20 text-on-surface hover:bg-white/10 rounded-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">link</span> Docs
+                                            </button>
+</div>
+</div>
+</div>
+<!-- Task Todo -->
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group/task">
+<button class="mt-0.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">radio_button_unchecked</span>
+</button>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3">
+<span class="text-on-surface text-base">Prompt Evaluation (Evals) basic concept</span>
+<span class="px-2 py-0.5 rounded text-[10px] uppercase tracking-wider bg-white/5 text-on-surface-variant border border-white/10">Medium</span>
+</div>
+</div>
+<button class="opacity-0 group-hover/task:opacity-100 text-on-surface-variant hover:text-on-surface p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 2 (Todo) -->
+<div class="relative pl-16 mb-10 group">
+<!-- Node Marker -->
+<div class="timeline-node absolute left-[19px] top-6 w-7 h-7 rounded-full bg-background border-2 border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors">
+<div class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-white/40"></div>
+</div>
+<div class="glass-panel p-0 overflow-hidden opacity-70 transition-all hover:opacity-100">
+<!-- Header -->
+<div class="p-6 border-b border-white/5 bg-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer">
+<div>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface">2. The API Layer &amp; RAG Basics</h3>
+<p class="text-sm text-on-surface-variant mt-1">Connecting your Next.js app to models and adding custom data.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-sm text-on-surface-variant font-medium bg-white/5 px-3 py-1 rounded-full border border-white/10">0/8 Tasks</div>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

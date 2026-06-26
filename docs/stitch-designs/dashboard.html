@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoadFolio - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Geist:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "inverse-on-surface": "#f3f0ef",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "outline": "#6c7a71",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e5e2e1",
+                      "primary-fixed": "#6ffbbe",
+                      "on-primary": "#ffffff",
+                      "background": "#fcf9f8",
+                      "surface-dim": "#dcd9d9",
+                      "primary": "#006c49",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#bbcabf",
+                      "surface-bright": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "on-primary-fixed": "#002113",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "on-tertiary-fixed": "#0b1c30",
+                      "surface-container-highest": "#e5e2e1",
+                      "primary-container": "#10b981",
+                      "inverse-primary": "#4edea3",
+                      "primary-fixed-dim": "#4edea3",
+                      "on-secondary-fixed": "#2a1700",
+                      "secondary": "#855300",
+                      "tertiary-fixed": "#d3e4fe",
+                      "on-surface": "#1c1b1b",
+                      "on-secondary-container": "#684000",
+                      "tertiary-container": "#94a4bd",
+                      "on-surface-variant": "#3c4a42",
+                      "surface": "#fcf9f8",
+                      "secondary-fixed": "#ffddb8",
+                      "tertiary": "#505f76",
+                      "on-primary-fixed-variant": "#005236",
+                      "on-primary-container": "#00422b",
+                      "inverse-surface": "#313030",
+                      "on-tertiary-container": "#2a3a4f",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#f0eded",
+                      "secondary-container": "#fea619",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#006c49",
+                      "surface-container-high": "#eae7e7",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1c1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "xl": "40px",
+                      "container-max": "1200px",
+                      "gutter": "24px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "display": [
+                              "Geist"
+                      ],
+                      "metadata": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "headline-lg-mobile": [
+                              "Geist"
+                      ],
+                      "label-caps": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "metadata": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          .heatmap-cell { width: 12px; height: 12px; border-radius: 2px; }
+          .heatmap-0 { background-color: #f1f5f9; }
+          .heatmap-1 { background-color: #d1fae5; }
+          .heatmap-2 { background-color: #6ee7b7; }
+          .heatmap-3 { background-color: #10b981; }
+          .heatmap-4 { background-color: #047857; }
+      </style>
+</head>
+<body class="bg-[#FAFAFA] text-on-surface font-body-md min-h-screen flex">
+<!-- SideNavBar (Hidden on Mobile) -->
+<nav class="hidden md:flex flex-col h-full py-md px-sm bg-surface dark:bg-inverse-surface border-r border-outline-variant dark:border-outline shadow-sm h-screen w-64 fixed left-0 top-0 z-20">
+<div class="flex items-center gap-sm mb-xl px-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]" data-icon="map" data-weight="fill" style="font-variation-settings: 'FILL' 1;">map</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary leading-tight">RoadFolio</h1>
+<p class="font-metadata text-metadata text-on-surface-variant">Learning Explorer</p>
+</div>
+</div>
+<ul class="flex flex-col gap-sm flex-grow">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-primary dark:text-inverse-primary font-bold border-r-4 border-primary hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-transform bg-primary/5" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span>My Roadmaps</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span>Explore</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto pt-lg border-t border-outline-variant dark:border-outline px-sm">
+<button class="w-full py-sm mb-md rounded-lg bg-primary-container text-on-primary font-body-md hover:bg-[#059669] transition-colors shadow-sm">
+                Upgrade to Pro
+            </button>
+<ul class="flex flex-col gap-xs">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors text-metadata font-metadata" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors text-metadata font-metadata" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="help">help</span>
+<span>Help</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area Wrapper -->
+<div class="flex-1 flex flex-col md:ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-16 px-xl bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm docked full-width top-0 sticky z-10">
+<!-- Mobile Brand (Hidden on Desktop since SideNav has it) -->
+<div class="md:hidden flex items-center gap-sm">
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary leading-tight">RoadFolio</h1>
+</div>
+<div class="flex-1 flex items-center justify-start md:pl-0 pl-md">
+<!-- Search Bar -->
+<div class="relative w-full max-w-md hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent text-body-md font-body-md text-on-surface placeholder-on-surface-variant" placeholder="Search roadmaps, skills..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all active:opacity-80 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all active:opacity-80 rounded-full hover:bg-surface-container">
+<img alt="User account menu" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small circular user profile picture featuring a young professional smiling slightly, shot in soft natural lighting against a neutral light grey background, embodying a clean and approachable corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcJYsjP3emNC8gwFI708QR7EdonZfYBAC1_I7M_q2lWgVmsx-tFl1jq3i_05RbKTFCtoiN08COsIJtJ9RndA4gUgYoTq_zWSjKMIwhT_A4eOoiWhhZ1jCz7wO8VfUl0BOpGrzRAsSE7MoM8pzj38U-P98d3ghffpIyZiWJbGfhYa9YKubOJo8leANyaOcZdX1UXFFfzhRDV6DE7uQQjMxZKYXhj_7Jy9hCEF9jQqbMA-vdBNaBS1ezJoQJskqcdy3h-qYTv6eh40A"/>
+</button>
+</div>
+</header>
+<!-- Main Dashboard Canvas -->
+<main class="flex-1 p-md md:p-xl max-w-container-max mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Left Column (Wider) -->
+<div class="lg:col-span-2 flex flex-col gap-gutter">
+<!-- Hero: Continue Learning -->
+<section class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-[0px_8px_20px_rgba(0,0,0,0.06)] hover:border-[#CBD5E1] transition-all p-lg relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute right-0 top-0 w-64 h-64 bg-primary-container/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-start justify-between mb-lg">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-container rounded-md text-metadata font-metadata text-on-surface-variant mb-2">Current Focus</span>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg font-bold text-on-surface mb-1">Full-Stack Engineer</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Module 4: Advanced React Patterns</p>
+</div>
+<div class="hidden sm:flex w-12 h-12 rounded-full bg-primary-container/10 items-center justify-center border border-primary-container/20">
+<span class="material-symbols-outlined text-primary-container text-[24px]" data-icon="code" data-weight="fill" style="font-variation-settings: 'FILL' 1;">code</span>
+</div>
+</div>
+<div class="mb-md">
+<div class="flex justify-between items-end mb-2">
+<span class="text-body-md font-body-md font-medium text-on-surface">Overall Progress</span>
+<span class="text-headline-md font-headline-md font-bold text-primary-container">65%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+<div class="flex justify-end mt-lg">
+<button class="px-6 py-2 bg-primary-container text-on-primary font-body-md rounded-lg hover:bg-[#059669] transition-colors shadow-sm flex items-center gap-2">
+<span>Continue Learning</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Active Roadmaps Grid -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h3 class="text-headline-md font-headline-md text-on-surface">My Active Roadmaps</h3>
+<a class="text-primary-container text-body-md font-body-md hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Card 1 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-[0px_8px_20px_rgba(0,0,0,0.06)] hover:border-[#CBD5E1] transition-all p-md flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="terminal">terminal</span>
+</div>
+<span class="px-2 py-1 rounded-full border border-outline-variant text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider">Medium</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-medium text-on-surface mb-1">React Mastery</h4>
+<p class="text-metadata font-metadata text-on-surface-variant mb-6 flex-grow">Deep dive into hooks, context, and state management.</p>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="text-metadata font-metadata text-on-surface-variant">32% Completed</span>
+</div>
+<div class="flex gap-1 h-1.5 w-full">
+<div class="flex-1 bg-primary-container rounded-l-full"></div>
+<div class="flex-1 bg-secondary-container rounded-none"></div>
+<div class="flex-1 bg-surface-container rounded-r-full"></div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-[0px_8px_20px_rgba(0,0,0,0.06)] hover:border-[#CBD5E1] transition-all p-md flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="schema">schema</span>
+</div>
+<span class="px-2 py-1 rounded-full bg-error-container text-on-error-container text-label-caps font-label-caps uppercase tracking-wider">Hard</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-medium text-on-surface mb-1">System Design</h4>
+<p class="text-metadata font-metadata text-on-surface-variant mb-6 flex-grow">Scalability, microservices, and distributed systems architecture.</p>
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="text-metadata font-metadata text-on-surface-variant">15% Completed</span>
+</div>
+<div class="flex gap-1 h-1.5 w-full">
+<div class="flex-1 bg-primary-container rounded-l-full"></div>
+<div class="flex-1 bg-surface-container rounded-none"></div>
+<div class="flex-1 bg-surface-container rounded-r-full"></div>
+<div class="flex-1 bg-surface-container rounded-r-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Sidebar-ish) -->
+<div class="lg:col-span-1 flex flex-col gap-gutter">
+<!-- Upcoming Milestones -->
+<section class="bg-surface rounded-xl border border-outline-variant shadow-sm p-lg">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-md">Upcoming Milestones</h3>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-[11px] top-2 bottom-2 w-[2px] bg-surface-container"></div>
+<ul class="space-y-md relative z-10">
+<!-- Node 1 (Completed) -->
+<li class="flex gap-sm items-start">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 mt-0.5 z-10 ring-4 ring-surface">
+<span class="material-symbols-outlined text-on-primary text-[14px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-medium text-on-surface line-through text-on-surface-variant">React Fundamentals</h4>
+<p class="text-metadata font-metadata text-on-surface-variant">Completed yesterday</p>
+</div>
+</li>
+<!-- Node 2 (Active) -->
+<li class="flex gap-sm items-start">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 mt-0.5 z-10 ring-4 ring-surface">
+<div class="w-2 h-2 rounded-full bg-on-secondary-container"></div>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-medium text-on-surface">Custom Hooks</h4>
+<p class="text-metadata font-metadata text-on-surface-variant">Current focus</p>
+</div>
+</li>
+<!-- Node 3 (Upcoming) -->
+<li class="flex gap-sm items-start">
+<div class="w-6 h-6 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center flex-shrink-0 mt-0.5 z-10 ring-4 ring-surface">
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-medium text-on-surface-variant">Context API</h4>
+<p class="text-metadata font-metadata text-on-surface-variant">Est. 2 hours</p>
+</div>
+</li>
+<!-- Node 4 (Upcoming) -->
+<li class="flex gap-sm items-start">
+<div class="w-6 h-6 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center flex-shrink-0 mt-0.5 z-10 ring-4 ring-surface">
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-medium text-on-surface-variant">Redux Integration</h4>
+<p class="text-metadata font-metadata text-on-surface-variant">Locked</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<!-- Activity Heatmap -->
+<section class="bg-surface rounded-xl border border-outline-variant shadow-sm p-lg">
+<div class="flex justify-between items-center mb-md">
+<h3 class="text-headline-md font-headline-md text-on-surface">Learning Activity</h3>
+</div>
+<!-- Simulated Heatmap Grid -->
+<div class="flex gap-1 overflow-x-auto pb-2 scrollbar-hide">
+<!-- Columns of days -->
+<!-- Column 1 -->
+<div class="flex flex-col gap-1">
+<div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-2"></div><div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-0"></div>
+</div>
+<!-- Column 2 -->
+<div class="flex flex-col gap-1">
+<div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-3"></div><div class="heatmap-cell heatmap-2"></div><div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-0"></div>
+</div>
+<!-- Column 3 -->
+<div class="flex flex-col gap-1">
+<div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-2"></div><div class="heatmap-cell heatmap-4"></div><div class="heatmap-cell heatmap-3"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-1"></div>
+</div>
+<!-- Column 4 -->
+<div class="flex flex-col gap-1">
+<div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-2"></div><div class="heatmap-cell heatmap-4"></div><div class="heatmap-cell heatmap-3"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-0"></div>
+</div>
+<!-- Column 5 -->
+<div class="flex flex-col gap-1">
+<div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-2"></div><div class="heatmap-cell heatmap-4"></div><div class="heatmap-cell heatmap-3"></div><div class="heatmap-cell heatmap-1"></div>
+</div>
+<!-- Column 6 -->
+<div class="flex flex-col gap-1">
+<div class="heatmap-cell heatmap-2"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-2"></div><div class="heatmap-cell heatmap-4"></div><div class="heatmap-cell heatmap-2"></div>
+</div>
+<!-- Column 7 (Current Week) -->
+<div class="flex flex-col gap-1">
+<div class="heatmap-cell heatmap-3"></div><div class="heatmap-cell heatmap-4"></div><div class="heatmap-cell heatmap-2"></div><div class="heatmap-cell heatmap-0"></div><div class="heatmap-cell heatmap-1"></div><div class="heatmap-cell heatmap-0 bg-surface-variant border border-dashed border-outline-variant"></div><div class="heatmap-cell heatmap-0 bg-surface-variant border border-dashed border-outline-variant"></div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-2 text-label-caps font-label-caps text-on-surface-variant">
+<span>Less</span>
+<div class="flex gap-1">
+<div class="heatmap-cell heatmap-0 border border-outline-variant/20"></div>
+<div class="heatmap-cell heatmap-1"></div>
+<div class="heatmap-cell heatmap-2"></div>
+<div class="heatmap-cell heatmap-3"></div>
+<div class="heatmap-cell heatmap-4"></div>
+</div>
+<span>More</span>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>

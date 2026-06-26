@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoadFolio - Import Roadmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#f9bd22",
+                        "on-surface-variant": "#bbcabf",
+                        "primary": "#4edea3",
+                        "on-primary-fixed": "#002113",
+                        "tertiary-container": "#ce9a00",
+                        "surface-bright": "#303c36",
+                        "on-background": "#d8e6dd",
+                        "on-secondary-container": "#00452e",
+                        "on-tertiary": "#402d00",
+                        "outline": "#86948a",
+                        "primary-fixed-dim": "#4edea3",
+                        "on-error": "#690005",
+                        "tertiary": "#f9bd22",
+                        "on-tertiary-fixed": "#261a00",
+                        "inverse-on-surface": "#27332d",
+                        "secondary-container": "#00bd85",
+                        "inverse-primary": "#006c49",
+                        "primary-container": "#10b981",
+                        "secondary-fixed": "#68fcbf",
+                        "inverse-surface": "#d8e6dd",
+                        "on-secondary-fixed": "#002114",
+                        "on-secondary-fixed-variant": "#005137",
+                        "surface-tint": "#4edea3",
+                        "surface-container-lowest": "#06100c",
+                        "on-primary": "#003824",
+                        "error-container": "#93000a",
+                        "surface-variant": "#2c3731",
+                        "surface": "#0a1611",
+                        "secondary": "#45dfa4",
+                        "primary-fixed": "#6ffbbe",
+                        "surface-container-high": "#212c27",
+                        "on-tertiary-container": "#4a3500",
+                        "tertiary-fixed": "#ffdf9f",
+                        "surface-container": "#17221d",
+                        "outline-variant": "#3c4a42",
+                        "surface-container-highest": "#2c3731",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#003825",
+                        "on-primary-fixed-variant": "#005236",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#0a1611",
+                        "secondary-fixed-dim": "#45dfa4",
+                        "background": "#0a1611",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "surface-container-low": "#131e19",
+                        "on-surface": "#d8e6dd",
+                        "on-primary-container": "#00422b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "panel-padding": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Space Grotesk"],
+                        "label-sm": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "body-base": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-base": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            font-family: 'Space Grotesk', sans-serif;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.05), transparent 25%);
+        }
+        .glass-panel {
+            background-color: rgba(19, 30, 25, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+        }
+        .glass-button-ghost {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: theme('colors.primary');
+            transition: all 0.3s ease;
+        }
+        .glass-button-ghost:hover {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .glass-input {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            outline: none;
+            border-bottom-color: theme('colors.primary-container');
+            box-shadow: 0 4px 15px -3px rgba(16, 185, 129, 0.1);
+        }
+        
+        .upload-zone {
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .upload-zone:hover {
+            border-color: theme('colors.primary');
+            background-color: rgba(16, 185, 129, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex selection:bg-primary/30 selection:text-white">
+<!-- Top Navigation (Web & Mobile, standard shell mapping) -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-panel-padding h-16 bg-background/80 backdrop-blur-xl border-b border-white/12 shadow-[0_0_30px_rgba(16,185,129,0.15)] md:hidden">
+<div class="font-display-lg-mobile text-display-lg-mobile text-primary">RoadFolio</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95" data-icon="account_circle" style="font-variation-settings: 'wght' 200;">account_circle</span>
+</div>
+</nav>
+<!-- Side Navigation (Web Only) -->
+<aside class="hidden md:flex flex-col p-panel-padding gap-8 bg-surface-container-low/60 backdrop-blur-3xl fixed left-0 top-0 h-full w-64 border-r border-white/12 shadow-[0_0_40px_rgba(16,185,129,0.1)] z-40">
+<div class="mb-8">
+<h1 class="font-display-lg text-display-lg font-bold text-primary">RoadFolio</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2 uppercase tracking-widest">Learning Explorer</p>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:text-on-surface hover:bg-white/5 transition-all duration-300 rounded-xl active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'wght' 200;">dashboard</span>
+<span class="font-headline-md text-headline-md text-[18px]">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-primary-container/20 text-primary rounded-xl px-4 py-3 border border-primary/20 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'wght' 200, 'FILL' 1;">map</span>
+<span class="font-headline-md text-headline-md text-[18px]">My Roadmaps</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:text-on-surface hover:bg-white/5 transition-all duration-300 rounded-xl active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'wght' 200;">person</span>
+<span class="font-headline-md text-headline-md text-[18px]">Profile</span>
+</a>
+</nav>
+<button class="w-full bg-primary-container text-on-primary-fixed font-headline-md text-[16px] py-3 rounded-xl hover:bg-primary-container/90 transition-colors shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+            Import roadmap
+        </button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 mt-16 md:mt-0 p-margin-mobile md:p-margin-desktop min-h-screen flex items-center justify-center relative z-10">
+<!-- Focus Panel -->
+<div class="glass-panel w-full max-w-[640px] rounded-[18px] p-panel-padding flex flex-col gap-8">
+<header>
+<h2 class="font-display-lg text-[32px] md:text-[40px] text-on-surface font-bold leading-tight">Import Roadmap</h2>
+<p class="font-body-base text-body-base text-on-surface-variant mt-2">Upload a markdown file or paste raw content to generate a new learning path.</p>
+</header>
+<div class="flex flex-col gap-6">
+<!-- Upload Zone -->
+<div class="upload-zone rounded-xl p-8 flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group">
+<input accept=".md" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" type="file"/>
+<div class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant group-hover:text-primary transition-colors" data-icon="upload_file" style="font-variation-settings: 'wght' 100;">upload_file</span>
+</div>
+<span class="font-headline-md text-[18px] text-on-surface text-center">Drag &amp; drop your .md file here</span>
+<span class="font-body-base text-body-base text-on-surface-variant mt-2">or click to browse</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant/50">
+<div class="h-[1px] flex-1 bg-white/10"></div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">or paste markdown</span>
+<div class="h-[1px] flex-1 bg-white/10"></div>
+</div>
+<!-- Text Area -->
+<div class="relative">
+<textarea class="glass-input w-full h-48 rounded-xl p-4 font-mono text-sm text-on-surface resize-none placeholder-on-surface-variant/40" placeholder="# My Learning Roadmap\n\n## Module 1: Fundamentals\n- [ ] Topic A\n- [ ] Topic B"></textarea>
+<div class="absolute bottom-4 right-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant/50" data-icon="data_object" style="font-variation-settings: 'wght' 200;">data_object</span>
+</div>
+</div>
+<!-- Validation Area -->
+<div class="h-6 flex items-center px-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/50 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="info" style="font-variation-settings: 'wght' 200;">info</span>
+                        Ready to parse
+                    </span>
+</div>
+</div>
+<footer class="flex justify-end gap-4 pt-4 border-t border-white/5">
+<button class="glass-button-ghost px-6 py-3 rounded-xl font-headline-md text-[16px]">
+                    Clear
+                </button>
+<button class="bg-primary-container text-on-primary-fixed px-8 py-3 rounded-xl font-headline-md text-[16px] shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all">
+                    Import roadmap
+                </button>
+</footer>
+</div>
+</main>
+</body></html>

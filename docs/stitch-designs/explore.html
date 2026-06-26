@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoadFolio - Explore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "inverse-on-surface": "#f3f0ef",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "outline": "#6c7a71",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e5e2e1",
+                      "primary-fixed": "#6ffbbe",
+                      "on-primary": "#ffffff",
+                      "background": "#fcf9f8",
+                      "surface-dim": "#dcd9d9",
+                      "primary": "#006c49",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#bbcabf",
+                      "surface-bright": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "on-primary-fixed": "#002113",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "on-tertiary-fixed": "#0b1c30",
+                      "surface-container-highest": "#e5e2e1",
+                      "primary-container": "#10b981",
+                      "inverse-primary": "#4edea3",
+                      "primary-fixed-dim": "#4edea3",
+                      "on-secondary-fixed": "#2a1700",
+                      "secondary": "#855300",
+                      "tertiary-fixed": "#d3e4fe",
+                      "on-surface": "#1c1b1b",
+                      "on-secondary-container": "#684000",
+                      "tertiary-container": "#94a4bd",
+                      "on-surface-variant": "#3c4a42",
+                      "surface": "#fcf9f8",
+                      "secondary-fixed": "#ffddb8",
+                      "tertiary": "#505f76",
+                      "on-primary-fixed-variant": "#005236",
+                      "on-primary-container": "#00422b",
+                      "inverse-surface": "#313030",
+                      "on-tertiary-container": "#2a3a4f",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#f0eded",
+                      "secondary-container": "#fea619",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#006c49",
+                      "surface-container-high": "#eae7e7",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1c1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "xl": "40px",
+                      "container-max": "1200px",
+                      "gutter": "24px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "display": [
+                              "Geist"
+                      ],
+                      "metadata": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "headline-lg-mobile": [
+                              "Geist"
+                      ],
+                      "label-caps": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "metadata": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #FAFAFA;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-inverse-surface border-r border-outline-variant dark:border-outline shadow-sm py-md px-sm z-50">
+<div class="flex items-center gap-sm px-md mb-xl">
+<span class="material-symbols-outlined text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary" data-weight="fill">map</span>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary leading-tight">RoadFolio</span>
+<span class="font-metadata text-metadata text-on-surface-variant">Learning Explorer</span>
+</div>
+</div>
+<div class="flex flex-col gap-sm flex-grow">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[0.98] transition-transform">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[0.98] transition-transform">map</span>
+<span class="font-body-md text-body-md">My Roadmaps</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-primary dark:text-inverse-primary font-bold border-r-4 border-primary bg-surface-container group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[0.98] transition-transform">explore</span>
+<span class="font-body-md text-body-md">Explore</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[0.98] transition-transform">person</span>
+<span class="font-body-md text-body-md">Profile</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-sm border-t border-outline-variant dark:border-outline pt-md">
+<button class="w-full bg-primary-container text-on-primary font-body-md text-body-md py-sm rounded-lg hover:bg-[#059669] transition-colors shadow-sm hover:shadow-md mb-sm">
+                Upgrade to Pro
+            </button>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[0.98] transition-transform">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[0.98] transition-transform">help</span>
+<span class="font-body-md text-body-md">Help</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="hidden md:flex justify-between items-center h-16 px-xl ml-64 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm full-width top-0 sticky z-40">
+<div class="flex items-center">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary mr-xl">RoadFolio</span>
+<div class="relative max-w-md w-full">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-xl pr-sm py-sm rounded-lg border border-outline-variant bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all" placeholder="Search roadmaps..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all active:opacity-80">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="md:ml-64 p-md md:p-xl flex-grow min-h-screen">
+<div class="max-w-[1200px] mx-auto">
+<!-- Header Section -->
+<div class="mb-xl">
+<h1 class="font-display text-display text-on-surface mb-sm">Explore Roadmaps</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Discover curated learning paths created by industry experts and the community. Find your next skill to master.</p>
+</div>
+<!-- Filter & Search Bar -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-sm mb-xl flex flex-col sm:flex-row gap-sm items-center justify-between">
+<div class="flex items-center gap-sm w-full sm:w-auto overflow-x-auto hide-scrollbar">
+<span class="font-label-caps text-label-caps text-on-surface-variant whitespace-nowrap ml-sm">CATEGORY</span>
+<button class="px-md py-xs rounded-full bg-surface-container-highest text-on-surface font-metadata text-metadata whitespace-nowrap hover:bg-surface-variant transition-colors border border-transparent">All</button>
+<button class="px-md py-xs rounded-full bg-surface text-on-surface font-metadata text-metadata whitespace-nowrap hover:bg-surface-container transition-colors border border-outline-variant">Web</button>
+<button class="px-md py-xs rounded-full bg-surface text-on-surface font-metadata text-metadata whitespace-nowrap hover:bg-surface-container transition-colors border border-outline-variant">Mobile</button>
+<button class="px-md py-xs rounded-full bg-surface text-on-surface font-metadata text-metadata whitespace-nowrap hover:bg-surface-container transition-colors border border-outline-variant">Data Science</button>
+<button class="px-md py-xs rounded-full bg-surface text-on-surface font-metadata text-metadata whitespace-nowrap hover:bg-surface-container transition-colors border border-outline-variant">AI</button>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto border-t sm:border-t-0 sm:border-l border-outline-variant pt-sm sm:pt-0 sm:pl-sm mt-sm sm:mt-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant whitespace-nowrap">DIFFICULTY</span>
+<select class="form-select border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface bg-surface-container-low py-sm pl-sm pr-xl focus:ring-2 focus:ring-primary-container focus:border-transparent cursor-pointer">
+<option>Any Level</option>
+<option>Easy</option>
+<option>Medium</option>
+<option>Hard</option>
+</select>
+</div>
+</div>
+<!-- Featured Roadmaps (Horizontal Scroll) -->
+<div class="mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">Trending Now</h2>
+<div class="flex overflow-x-auto gap-gutter pb-md hide-scrollbar -mx-md px-md md:mx-0 md:px-0">
+<!-- Featured Card 1 -->
+<div class="min-w-[300px] md:min-w-[400px] bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-lg hover:border-[#CBD5E1] transition-all flex flex-col group cursor-pointer relative overflow-hidden">
+<div class="h-40 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A modern, high-contrast illustration representing Full Stack Web Development. Glowing isometric laptop, vibrant floating code symbols (JS, React, Node), set against a clean, minimal light-mode background. Deep emerald green and pristine white color palette. Subtle drop shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvhTCz1JrTJOs0XKPr4cXLgU1E67ou4WubH2Kq3_mHLcGq4LJiCSobQmP_Dg_LYsTI83YsRbKbvbQ0kIEqeaGu89wX-ITnMHRdULXep8wvvwuRo8zuH7HF45Uq1QUOFY3I1aq4zAOXZd-FLc9Kj5vK-mGTiwxDMboKbVhWZS4LJHPd-rW6KpK3Kq8uNnn6e0Axby6g7Ou1ZPLXdms5QvVP6YgxKJR_JxnEaZjkm2m_Pd7k_7omrnB-iHIjRZzkmCVLbqc2yIpomzM"/>
+<div class="absolute top-sm right-sm bg-surface-container-lowest text-on-surface font-metadata text-metadata px-sm py-xs rounded-full border border-outline-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary-container" data-weight="fill">star</span> 4.9
+                            </div>
+</div>
+<div class="p-lg flex flex-col flex-grow bg-surface relative z-10">
+<div class="flex items-center gap-sm mb-sm">
+<span class="bg-surface-container-highest text-on-surface px-xs py-xs rounded text-xs font-metadata">Medium</span>
+<span class="text-on-surface-variant text-metadata font-metadata">• 12 Modules</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors">Modern Full-Stack React</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-md">Master the React ecosystem from components to server-side rendering with Next.js.</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="font-metadata text-metadata">Sarah Drasner</span>
+</div>
+<button class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center text-on-surface group-hover:bg-primary-container group-hover:text-on-primary group-hover:border-primary-container transition-all">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Featured Card 2 -->
+<div class="min-w-[300px] md:min-w-[400px] bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-lg hover:border-[#CBD5E1] transition-all flex flex-col group cursor-pointer relative overflow-hidden">
+<div class="h-40 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A clean, abstract representation of Machine Learning algorithms. Connecting nodes, glowing data points, and a subtle neural network pattern in a bright, modern minimalist style. Emerald green accents on a stark white background. High-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz77M2YXXsvDZw5PHE7CI2cFsY4nbzaxxnCw867YhcLtKhBflbR6z4pcSlpXBp0XSMrxOohYLK6aQarCH3gi4c1wA83x8bbQn3aFBWVApf7rY3BsQSUgrsWx1HapEl826HHJ7Jde8_I2FtD827SKvf6JRzya1ZzsxAtQhsMhMcTkMjn_vH2zp1_F7vgZuP1eT7R1A4klbU77i_zRGFo001Q_AV4SqUBbPtAOe9UK3nln5bWMhhbd8WG3YDmU75LemJhnbx3rgxyjU"/>
+<div class="absolute top-sm right-sm bg-surface-container-lowest text-on-surface font-metadata text-metadata px-sm py-xs rounded-full border border-outline-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary-container" data-weight="fill">star</span> 4.8
+                            </div>
+</div>
+<div class="p-lg flex flex-col flex-grow bg-surface relative z-10">
+<div class="flex items-center gap-sm mb-sm">
+<span class="bg-[#FEE2E2] text-[#991B1B] px-xs py-xs rounded text-xs font-metadata border border-[#FCA5A5]">Hard</span>
+<span class="text-on-surface-variant text-metadata font-metadata">• 24 Modules</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors">Applied Machine Learning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-md">From linear regression to deep neural networks using PyTorch and Scikit-Learn.</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="font-metadata text-metadata">Andrew Ng</span>
+</div>
+<button class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center text-on-surface group-hover:bg-primary-container group-hover:text-on-primary group-hover:border-primary-container transition-all">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Featured Card 3 -->
+<div class="min-w-[300px] md:min-w-[400px] bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-lg hover:border-[#CBD5E1] transition-all flex flex-col group cursor-pointer relative overflow-hidden">
+<div class="h-40 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A sleek, minimalist illustration of UI/UX design tools. Floating wireframes, color palettes, and precision cursors over a clean grid background. Light-mode aesthetic, utilizing white, light gray, and vibrant emerald green for focal points. Professional and structured." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbcSdEu0IYcIuDiqT1YJ_AcbNusM0nZDg52pqt6UcmvAaH8yChwnWv82nIYOVI79zpuA0c_No8adsjjXDWTLYozy8Yyaj55c46tMsLdH97sh4BlpepVkdPb1nde-MbAoFV3pEZqxCk1oSSZN_tGgLYTwApFyfXXC7JyRLi5W4C94jBoHjKpzPPTzjtrVn59KaOoujGxqS4YBqH6sNpPh3x1q6lYvbOBn55SqDmTidTQHRRKmJHPfx68DHNGD0NsOWarguKXZpShmI"/>
+<div class="absolute top-sm right-sm bg-surface-container-lowest text-on-surface font-metadata text-metadata px-sm py-xs rounded-full border border-outline-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary-container" data-weight="fill">star</span> 4.9
+                            </div>
+</div>
+<div class="p-lg flex flex-col flex-grow bg-surface relative z-10">
+<div class="flex items-center gap-sm mb-sm">
+<span class="bg-surface-container-highest text-on-surface px-xs py-xs rounded text-xs font-metadata">Easy</span>
+<span class="text-on-surface-variant text-metadata font-metadata">• 8 Modules</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors">UI/UX Foundations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-md">Learn the core principles of user-centered design, wireframing, and prototyping.</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="font-metadata text-metadata">Gary Simon</span>
+</div>
+<button class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center text-on-surface group-hover:bg-primary-container group-hover:text-on-primary group-hover:border-primary-container transition-all">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- All Roadmaps Grid -->
+<div>
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">All Roadmaps</h2>
+<button class="text-primary font-metadata text-metadata hover:underline flex items-center gap-xs">
+                        View List <span class="material-symbols-outlined text-[18px]">view_list</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Grid Card 1 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-lg hover:border-[#CBD5E1] transition-all p-lg flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-[#EFF6FF] text-[#3B82F6] flex items-center justify-center border border-[#BFDBFE]">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</div>
+<span class="bg-surface-container-highest text-on-surface px-xs py-xs rounded text-xs font-metadata">Medium</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Advanced Python</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Deep dive into decorators, generators, concurrency, and testing in Python.</p>
+<div class="border-t border-outline-variant pt-md flex items-center justify-between">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-metadata text-metadata">~40 hrs</span>
+</div>
+<button class="px-sm py-xs border border-outline-variant rounded-md text-on-surface font-metadata text-metadata hover:bg-primary-container hover:text-on-primary hover:border-primary-container transition-colors flex items-center gap-xs group">
+                                Import <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">add</span>
+</button>
+</div>
+</div>
+<!-- Grid Card 2 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-lg hover:border-[#CBD5E1] transition-all p-lg flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-[#FDF4FF] text-[#D946EF] flex items-center justify-center border border-[#F5D0FE]">
+<span class="material-symbols-outlined text-[24px]">smartphone</span>
+</div>
+<span class="bg-[#FEE2E2] text-[#991B1B] px-xs py-xs rounded text-xs font-metadata border border-[#FCA5A5]">Hard</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">iOS Development with Swift</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Build native iOS applications using SwiftUI and modern architectural patterns.</p>
+<div class="border-t border-outline-variant pt-md flex items-center justify-between">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-metadata text-metadata">~80 hrs</span>
+</div>
+<button class="px-sm py-xs border border-outline-variant rounded-md text-on-surface font-metadata text-metadata hover:bg-primary-container hover:text-on-primary hover:border-primary-container transition-colors flex items-center gap-xs group">
+                                Import <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">add</span>
+</button>
+</div>
+</div>
+<!-- Grid Card 3 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-lg hover:border-[#CBD5E1] transition-all p-lg flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-[#F0FDF4] text-[#16A34A] flex items-center justify-center border border-[#BBF7D0]">
+<span class="material-symbols-outlined text-[24px]">database</span>
+</div>
+<span class="bg-surface-container-highest text-on-surface px-xs py-xs rounded text-xs font-metadata">Easy</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">SQL Fundamentals</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Learn to query, manipulate, and analyze data using standard SQL syntax.</p>
+<div class="border-t border-outline-variant pt-md flex items-center justify-between">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-metadata text-metadata">~15 hrs</span>
+</div>
+<button class="px-sm py-xs border border-outline-variant rounded-md text-on-surface font-metadata text-metadata hover:bg-primary-container hover:text-on-primary hover:border-primary-container transition-colors flex items-center gap-xs group">
+                                Import <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">add</span>
+</button>
+</div>
+</div>
+<!-- Grid Card 4 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-lg hover:border-[#CBD5E1] transition-all p-lg flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-[#FEF2F2] text-[#DC2626] flex items-center justify-center border border-[#FECACA]">
+<span class="material-symbols-outlined text-[24px]">security</span>
+</div>
+<span class="bg-surface-container-highest text-on-surface px-xs py-xs rounded text-xs font-metadata">Medium</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Cybersecurity Basics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Understand network security, cryptography, and common vulnerability defense.</p>
+<div class="border-t border-outline-variant pt-md flex items-center justify-between">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-metadata text-metadata">~30 hrs</span>
+</div>
+<button class="px-sm py-xs border border-outline-variant rounded-md text-on-surface font-metadata text-metadata hover:bg-primary-container hover:text-on-primary hover:border-primary-container transition-colors flex items-center gap-xs group">
+                                Import <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">add</span>
+</button>
+</div>
+</div>
+<!-- Grid Card 5 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-lg hover:border-[#CBD5E1] transition-all p-lg flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-[#FFFBEB] text-[#D97706] flex items-center justify-center border border-[#FDE68A]">
+<span class="material-symbols-outlined text-[24px]">cloud</span>
+</div>
+<span class="bg-[#FEE2E2] text-[#991B1B] px-xs py-xs rounded text-xs font-metadata border border-[#FCA5A5]">Hard</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">AWS Solutions Architect</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Prepare for the AWS Certified Solutions Architect Associate exam.</p>
+<div class="border-t border-outline-variant pt-md flex items-center justify-between">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-metadata text-metadata">~60 hrs</span>
+</div>
+<button class="px-sm py-xs border border-outline-variant rounded-md text-on-surface font-metadata text-metadata hover:bg-primary-container hover:text-on-primary hover:border-primary-container transition-colors flex items-center gap-xs group">
+                                Import <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">add</span>
+</button>
+</div>
+</div>
+<!-- Grid Card 6 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-lg hover:border-[#CBD5E1] transition-all p-lg flex flex-col border-dashed bg-surface-container-lowest">
+<div class="flex-grow flex flex-col items-center justify-center text-center py-xl">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-md">
+<span class="material-symbols-outlined text-[32px]">add_road</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Create Custom Roadmap</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md max-w-[250px]">Design your own learning path from scratch or remix existing ones.</p>
+<button class="px-md py-sm bg-primary-container text-on-primary rounded-lg font-metadata text-metadata hover:bg-[#059669] transition-colors shadow-sm">
+                                Start Building
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
