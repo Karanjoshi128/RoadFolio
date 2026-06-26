@@ -74,8 +74,8 @@ export async function setNodeStatusAction(
     update: { status },
   });
 
-  revalidatePath(`/roadmaps/${node.roadmap.slug}`);
-  revalidatePath("/dashboard");
+  // No revalidatePath: the roadmap view updates progress optimistically on the
+  // client, and dashboard/profile are dynamic so they refetch on next navigation.
 }
 
 export async function deleteRoadmapAction(slug: string) {

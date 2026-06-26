@@ -1,10 +1,8 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import type { Difficulty, NodeType, ProgressStatus } from "@prisma/client";
-import { toast } from "sonner";
 
-import { setNodeStatusAction } from "@/lib/actions/roadmap";
 import { cn } from "@/lib/utils";
 import { MaterialIcon } from "@/components/material-icon";
 import { DifficultyBadge } from "@/components/difficulty-badge";
@@ -16,38 +14,26 @@ export interface NodeCardData {
   difficulty: Difficulty | null;
   estimate: string | null;
   optional: boolean;
-  status: ProgressStatus;
   hasContent: boolean;
 }
 
 export function NodeCard({
   node,
+  status,
+  onToggle,
   children,
 }: {
   node: NodeCardData;
+  status: ProgressStatus;
+  onToggle: (next: ProgressStatus) => void;
   children?: React.ReactNode;
 }) {
-  const [status, setStatus] = useState<ProgressStatus>(node.status);
   const [open, setOpen] = useState(false);
-  const [pending, startTransition] = useTransition();
 
   const done = status === "done";
   const skipped = status === "skipped";
   const active = status === "in_progress";
   const complete = done || skipped;
-
-  function update(next: ProgressStatus) {
-    const prev = status;
-    setStatus(next);
-    startTransition(async () => {
-      try {
-        await setNodeStatusAction(node.id, next);
-      } catch {
-        setStatus(prev);
-        toast.error("Could not update status.");
-      }
-    });
-  }
 
   return (
     <div
@@ -65,8 +51,7 @@ export function NodeCard({
         {/* Status checkbox */}
         <button
           type="button"
-          disabled={pending}
-          onClick={() => update(complete ? "not_started" : "done")}
+          onClick={() => onToggle(complete ? "not_started" : "done")}
           aria-label={complete ? "Mark not started" : "Mark done"}
           className="mt-0.5 shrink-0"
         >
@@ -108,8 +93,7 @@ export function NodeCard({
               {!complete && !active && (
                 <button
                   type="button"
-                  disabled={pending}
-                  onClick={() => update("in_progress")}
+                  onClick={() => onToggle("in_progress")}
                   className="rounded px-2 py-1 font-metadata text-[12px] font-semibold text-on-surface-variant hover:text-primary"
                 >
                   Start
@@ -118,8 +102,7 @@ export function NodeCard({
               {active && (
                 <button
                   type="button"
-                  disabled={pending}
-                  onClick={() => update("done")}
+                  onClick={() => onToggle("done")}
                   className="rounded bg-primary-container px-2 py-1 font-metadata text-[12px] font-semibold text-on-primary transition-colors hover:bg-primary"
                 >
                   Mark Done
@@ -128,8 +111,7 @@ export function NodeCard({
               {!complete && (
                 <button
                   type="button"
-                  disabled={pending}
-                  onClick={() => update("skipped")}
+                  onClick={() => onToggle("skipped")}
                   title="Skip"
                   className="rounded p-1 text-on-surface-variant transition-colors hover:text-error"
                 >
@@ -139,8 +121,7 @@ export function NodeCard({
               {complete && (
                 <button
                   type="button"
-                  disabled={pending}
-                  onClick={() => update("not_started")}
+                  onClick={() => onToggle("not_started")}
                   className="rounded px-2 py-1 font-metadata text-[12px] text-on-surface-variant hover:text-primary"
                 >
                   Undo
@@ -150,7 +131,7 @@ export function NodeCard({
                 <button
                   type="button"
                   onClick={() => setOpen((v) => !v)}
-                  className="rounded p-1 text-on-surface-variant hover:bg-surface-container"
+                  className="rounded p-1 text-on-surface-variant hover:bg-white/5"
                   aria-label={open ? "Collapse" : "Expand"}
                 >
                   <MaterialIcon
@@ -163,9 +144,7 @@ export function NodeCard({
           </div>
 
           {open && node.hasContent && (
-            <div className="mt-2 border-t border-outline-variant/60 pt-2">
-              {children}
-            </div>
+            <div className="mt-2 border-t border-white/10 pt-2">{children}</div>
           )}
         </div>
       </div>
